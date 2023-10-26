@@ -46,26 +46,27 @@ Class AGITemplate #AllModules and interactions between them
 
 	MetaPrompt = "Suppose you are an information processing system that in his code has" + NamesOfModulesListText + " and can add more arbitrary modules. You made this progress: " + Progress + " How would you solve this task using those functionalities? " + Task + " Do you need more modules? Make your reply format "Use module X to do Y. + ModuleAbilitiesListText"
 
+	Hardware
+		Digital computer
+		Neuromorphic 
+
+	Software
+		Modules
+	
 	Modules
-
-		Software
-			Memory
-		Hardware
-			Digital computer
-			Neuromorphic 
-
-		LongTermMemory
-			Text #Weights of LLMs of open source LLaMA 2 or GPT4, MemGPT, SparsePrimingRepresentations, L2MAC
-			Visual #GPT Vision, Bard, DeepMind UniSim
-			Auditory
-				Sounds
-				Speaking
-				Music
-			Touch #Eureka NVIDIA
-			Feeling
-			3D #3D-GPT, GAIA-1
-			Abstract #Multimodal Gemini
-		ShortTermMemory 
+		Memory
+			LongTermMemory
+				Text #Weights of LLMs of open source LLaMA 2 or GPT4, MemGPT, SparsePrimingRepresentations, L2MAC
+				Visual #GPT Vision, Bard, DeepMind UniSim
+				Auditory
+					Sounds
+					Speaking
+					Music
+				Touch #Eureka NVIDIA
+				Feeling
+				3D #3D-GPT, GAIA-1
+				Abstract #Multimodal Gemini
+			ShortTermMemory 
 
 		SubAgentManager #MetaGPT, OpenAgents, AgentVerse, XAgent, AutoGen, AgentGPT, ChatDev
 		PeopleHiringManager
