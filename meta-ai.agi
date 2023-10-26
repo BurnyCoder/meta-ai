@@ -1,0 +1,169 @@
+#StartGUI()
+#WaitForUserInput()
+
+Class AGITemplate #AllModules and interactions between them
+	
+	Function Construct(Task)
+		Task = Task
+
+	Text Task
+	Text Status = "NotFinished"
+	Number Time = 0
+	Text Progress = "Start."
+	
+	Text NamesOfModulesListText = "" #example "memory, reasoning ability, , ability to spawn helper agents"
+		
+	Text ModuleAbilitiesListText = ""
+
+			###
+			Example:
+
+			Suppose you are an information processing system that in his code has:
+			- memory
+			- reasoning ability
+			- ability to spawn helper agents
+			- internet access
+			- python
+
+			Your modules have those abilities:
+			- memory can save Texts of text
+			- reasoning ability can prompt ChatGPT using text and images
+			- internet access can search, click and read any internet website
+			- python can run any python code and analyze running program
+			
+			You made this progress: Start.
+			How would you solve this task using those functionalities:
+			"Create Simple Snake Game Software"
+			
+			Do you need more modules? 
+			
+			Use this format, give step by step responce to achieve the desired goal by the modules interacting with eacother:
+			I need/don't need more modules.
+			1) In module A do X
+			2) In module B do Y
+			...
+			###
+
+	MetaPrompt = "Suppose you are an information processing system that in his code has" + NamesOfModulesListText + " and can add more arbitrary modules. You made this progress: " + Progress + " How would you solve this task using those functionalities? " + Task + " Do you need more modules? Make your reply format "Use module X to do Y. + ModuleAbilitiesListText"
+
+	Modules
+
+		Software
+			Memory
+		Hardware
+			Digital computer
+			Neuromorphic 
+
+		LongTermMemory
+			Text #Weights of LLMs of open source LLaMA 2 or GPT4, MemGPT, SparsePrimingRepresentations, L2MAC
+			Visual #GPT Vision, Bard, DeepMind UniSim
+			Auditory
+				Sounds
+				Speaking
+				Music
+			Touch #Eureka NVIDIA
+			Feeling
+			3D #3D-GPT, GAIA-1
+			Abstract #Multimodal Gemini
+		ShortTermMemory 
+
+		SubAgentManager #MetaGPT, OpenAgents, AgentVerse, XAgent, AutoGen, AgentGPT, ChatDev
+		PeopleHiringManager
+
+		TalkToOwners
+
+		Morality
+			CoordinationProtocols
+
+		ScienceLLM
+			BayesianLLM
+				Ability="Bayesian metanalysis on studies"
+
+		SelfEditingImproving
+
+		GetStateOfTheArt
+			Data
+				Accessible
+				Potential
+			Tools
+			Capabilities
+
+		Function Replicate
+
+		InternetAccess
+			GoogleAPI
+			WikipediaAPI
+			GoogleScholarAPI
+			YoutubeAPI
+			GoogleBooksAPI
+			SocialMediaAPI
+		Python
+		Shell
+
+		StatisticsTools #sidebar https://en.wikipedia.org/wiki/Regression_analysis
+		MachineLearningTools #https://paperswithcode.com/sota sidebar https://en.wikipedia.org/wiki/Machine_learning
+		TrainedAIModels #https://huggingface.co/models
+		AITools #https://theresanaiforthat.com/ https://www.futuretools.io/ 
+
+		Function Reason
+			PromptOutput = ChatGPTCall(MetaPrompt)
+			OutputPrograms = ConvertToCode(PromptOutput) #Langchain
+			Result = OutputPrograms()
+			Progress = Reflect(Result)
+			MetaPrompt = Result.NextPrompt
+			Status = Reflect(Result)			
+
+		Function ChatGPTCall
+			Ability = "Can prompt ChatGPT"
+		Function LlamaCall
+
+		Function UpdateTags
+			SearchOnInternetForTags
+			UpdateInternalState
+
+		WorldModel
+			Self
+			Environment
+
+		Foresighting
+
+		Reflecting
+
+		SelfPrompting #Promptbreeder
+		
+		Embodiment
+
+
+	Function Tick
+		Modules.Reason()
+
+	Function Live()
+		Progress = "Start."
+		Tick()
+		While Status is "NotFinished" 
+			Tick()
+
+	Function GetNamesOfModulesList
+		for Module in Self.Modules 
+			NamesOfModulesList = NamesOfModulesList + Module.Name
+			if not last 
+				NamesOfModulesList = NamesOfModulesList + ", "
+
+	Function GetModuleAbilitiesListText
+	for Module in Self.Modules 
+		if Exists(Module.Ability) is True
+			ModuleAbilitiesListText = ModuleAbilitiesListText + Module.Name + " can " + Module.Ability ". "
+
+	Function AddModule(Module)
+		Self.Modules = Modules + Module 
+		GetNamesOfModulesList()
+		GetModuleAbilitiesListText()
+
+	Function EditModule(Module)
+		Self.Modules.Module = Module
+	
+
+Call StartAGI("Create Simple Snake Game Software")
+
+Function StartAGI(Task)
+	AGITemplate(Task).Live()

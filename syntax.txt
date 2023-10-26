@@ -1,0 +1,40 @@
+Metalanguage for calling Python and potentially other languages
+
+Syntax:
+
+# means comments, or or ### comment ####
+
+Python(PathToFile) calls a python file
+
+Class, String, Tags, Function are explicit tags, rest is derived implictly, python style
+"=" is same as newline and pythonline indent, "," is same as newline, () is for more readable grouping
+
+"a = b,c,d" is same as "a = (b,c,d)" which is also same as pythonlike newlines and indenting:
+a 
+ 	b
+	c
+	d
+you can choose any depending on readibility
+
+implicitly everything written is a definition that can exist as an instance, it becomes an instance when its called by adding to memory MemoryAdd that can then be edited MemoryEdit, and read MemoryRead
+
+implicitly all parts of the definitions are initialized, explictly you can initialize just parts (lines) by specifying it as function argument
+
+functions can be called by Call
+
+if x is y then z is pythonlike
+
+the file calls the first call command
+
+some containers can have arbitrary functions, if you call that container you get called whats inside
+
+Functions imply some editable memory in its structure (class) context
+
+Each Object has implicit string name in Object.Name
+
+Like in python:
+Function Live() is definition
+Live() calls it
+function types when called call line by line
+
+Exists(x) checks if that thing exists in memory and returns boolean
