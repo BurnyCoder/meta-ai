@@ -43,6 +43,7 @@ Class AGITemplate #AllModules and interactions between them
 			2) In module B do Y
 			...
 			###
+			#Use regex to foce it into this format, use langchain to call programs in modules, do selfimproving metaprompting
 
 	MetaPrompt = "Suppose you are an information processing system that in his code has" + NamesOfModulesListText + " and can add more arbitrary modules. You made this progress: " + Progress + " How would you solve this task using those functionalities? " + Task + " Do you need more modules? Make your reply format "Use module X to do Y. + ModuleAbilitiesListText"
 
@@ -51,12 +52,13 @@ Class AGITemplate #AllModules and interactions between them
 		Neuromorphic 
 
 	Software
-		Modules
+			Modules
 	
 	Modules
+
 		Memory
 			LongTermMemory
-				Text #Weights of LLMs of open source LLaMA 2 or GPT4, MemGPT, SparsePrimingRepresentations, L2MAC
+				Text #Weights of LLMs of open source LLaMA 2 or GPT4, MemGPT, SparsePrimingRepresentations, L2MAC, or for easier tasks older technologies -  Bag-of-words, Word vectors, stemming, lemmatization, spell correction
 				Visual #GPT Vision, Bard, DeepMind UniSim
 				Auditory
 					Sounds
